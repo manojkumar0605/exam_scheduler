@@ -1,0 +1,459 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.App {
+  min-height: 100vh;
+  background: #FAE1DD;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Header */
+.app-header {
+  background: #F8EDEB;
+  border-bottom: 1px solid #E8E8E4;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  min-height: 70px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.header-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-container {
+  position: relative;
+}
+
+.profile-btn {
+  background: #FFE5D9;
+  border: none;
+  padding: 0.625rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.profile-btn:hover {
+  background: #FFD7BA;
+  transform: scale(1.05);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #F8EDEB;
+  border: 1px solid #E8E8E4;
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 1001;
+}
+
+.profile-dropdown p {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  color: #000;
+}
+
+.profile-dropdown strong {
+  color: #000;
+}
+
+.theme-btn {
+  position: absolute;
+  right: 140px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #FFE5D9;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: all 0.2s;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-btn:hover {
+  background: #FFD7BA;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.theme-btn:focus {
+  outline: 2px solid #FEC5BB;
+  outline-offset: 2px;
+}
+
+.logout-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #FEC5BB;
+  color: #000;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+  font-size: 0.9375rem;
+}
+
+.logout-btn:hover {
+  background: #FEC89A;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logout-btn:focus {
+  outline: 2px solid #FEC5BB;
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .app-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .app-title {
+    font-size: 1.25rem;
+  }
+  
+  .header-actions {
+    gap: 0.5rem;
+    right: 0.5rem;
+  }
+  
+  .theme-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.125rem;
+  }
+  
+  .logout-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 90px;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+  color: #000;
+  font-size: 1rem;
+}
+
+/* Grid Layout */
+.scheduler-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+/* Form Section */
+.form-section {
+  background: #F8EDEB;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+  transition: background-color 0.3s ease;
+}
+
+.form-section h2 {
+  font-size: 1.25rem;
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #000;
+}
+
+input, select {
+  padding: 0.75rem;
+  border: 1px solid #E8E8E4;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  background: #FFE5D9;
+  color: #000;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #FEC5BB;
+  box-shadow: 0 0 0 3px rgba(254, 197, 187, 0.2);
+}
+
+button[type="submit"] {
+  background: #FEC5BB;
+  color: #000;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+
+button[type="submit"]:hover {
+  background: #FFD7BA;
+}
+
+button[type="submit"]:disabled {
+  background: #E8E8E4;
+  cursor: not-allowed;
+}
+
+/* Exams Section */
+.exams-section {
+  background: #F8EDEB;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.exams-section h2 {
+  font-size: 1.25rem;
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.exams-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.exam-card {
+  background: #FFE5D9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid #FEC5BB;
+  transition: all 0.3s ease;
+}
+
+.exam-card:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transform: translateY(-2px);
+}
+
+.exam-card h3 {
+  color: #000;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.exam-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.exam-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #000;
+  font-size: 0.875rem;
+}
+
+.exam-detail span {
+  font-weight: 500;
+  color: #000;
+}
+
+.delete-btn {
+  background: #FEC89A;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.delete-btn:hover {
+  background: #FFD7BA;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #000;
+}
+
+.empty-state svg {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.dark-theme .app-header {
+  background: #1a1a1a;
+  border-bottom-color: #333;
+}
+
+.dark-theme .app-title {
+  color: #fff;
+}
+
+.dark-theme .theme-btn {
+  background: #333;
+}
+
+.dark-theme .theme-btn:hover {
+  background: #444;
+}
+
+.dark-theme .profile-btn {
+  background: #333;
+}
+
+.dark-theme .profile-btn:hover {
+  background: #444;
+}
+
+.dark-theme .profile-dropdown {
+  background: #1a1a1a;
+  border-color: #333;
+}
+
+.dark-theme .profile-dropdown p {
+  color: #fff;
+}
+
+.dark-theme .profile-dropdown strong {
+  color: #fff;
+}
+
+.dark-theme .form-section,
+.dark-theme .exams-section {
+  background: #1a1a1a;
+}
+
+.dark-theme .form-section h2,
+.dark-theme .exams-section h2,
+.dark-theme .exam-card h3 {
+  color: #fff;
+}
+
+.dark-theme input,
+.dark-theme select {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #fff;
+}
+
+.dark-theme .exam-card {
+  background: #2a2a2a;
+  border-left-color: #FEC5BB;
+}
+
+.dark-theme .exam-detail {
+  color: #fff;
+}
+
+.dark-theme .exam-detail span {
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .scheduler-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-section {
+    position: static;
+  }
+}
