@@ -1,0 +1,49 @@
+/* Professional Academic Color System */
+:root {
+  /* Primary Colors */
+  --navy-blue: #1C2833;
+  --royal-blue: #2E4053;
+  
+  /* Secondary Colors */
+  --slate-gray: #2E4053;
+  --cool-gray: #AAB7B8;
+  
+  /* Accent Colors */
+  --emerald-green: #059669;
+  --amber: #F59E0B;
+  --red: #DC2626;
+  
+  /* Background Colors */
+  --bg-main: #F4F6F6;
+  --bg-card: #FFFFFF;
+  
+  /* Text Colors */
+  --text-primary: #1C2833;
+  --text-secondary: #2E4053;
+  --text-light: #AAB7B8;
+  
+  /* Border & Divider */
+  --border-color: #D5DBDB;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+  /* Spacing (8px system) */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
