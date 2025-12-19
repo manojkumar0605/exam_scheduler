@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Login.css';
+import API_URL from './config';
 
 function Login({ onLogin, onSignUp, darkTheme, toggleTheme }) {
   const [credentials, setCredentials] = useState({ name: '', email: '', password: '', designation: 'student' });
@@ -8,7 +9,7 @@ function Login({ onLogin, onSignUp, darkTheme, toggleTheme }) {
     e.preventDefault();
     if (credentials.name && credentials.email && credentials.password) {
       try {
-        const response = await fetch('http://localhost:5001/api/auth/login', {
+        const response = await fetch(`${API_URL}/api/auth/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(credentials)
