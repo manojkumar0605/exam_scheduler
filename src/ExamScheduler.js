@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import API_URL from './config';
 
 function ExamScheduler({ onLogout, userType, darkTheme, toggleTheme }) {
   const [exams, setExams] = useState([]);
@@ -18,7 +19,7 @@ function ExamScheduler({ onLogout, userType, darkTheme, toggleTheme }) {
 
   const fetchExams = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/exams');
+      const response = await fetch(`${API_URL}/api/exams`);
       const data = await response.json();
       setExams(data);
     } catch (error) {
@@ -29,7 +30,7 @@ function ExamScheduler({ onLogout, userType, darkTheme, toggleTheme }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5001/api/exams', {
+      const response = await fetch(`${API_URL}/api/exams`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -45,7 +46,7 @@ function ExamScheduler({ onLogout, userType, darkTheme, toggleTheme }) {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5001/api/exams/${id}`, {
+      const response = await fetch(`${API_URL}/api/exams/${id}`, {
         method: 'DELETE'
       });
       if (response.ok) {

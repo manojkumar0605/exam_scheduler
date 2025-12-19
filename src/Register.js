@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Login.css';
+import API_URL from './config';
 
 function Register({ onRegister, onBackToLogin, darkTheme, toggleTheme }) {
   const [formData, setFormData] = useState({ 
@@ -13,7 +14,7 @@ function Register({ onRegister, onBackToLogin, darkTheme, toggleTheme }) {
     e.preventDefault();
     if (formData.name && formData.email && formData.password) {
       try {
-        const response = await fetch('http://localhost:5001/api/auth/register', {
+        const response = await fetch(`${API_URL}/api/auth/register`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
